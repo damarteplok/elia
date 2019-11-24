@@ -7,10 +7,10 @@
         </v-btn>
       </template>
       <v-card>
-        <v-card-title class="justify-center">Top Question</v-card-title>
+        <v-card-title class="justify-center">Top Question For You!</v-card-title>
         <v-divider></v-divider>
         <v-card-text style="height: 80vh; padding-right:1rem; padding-left: 1rem;">
-          <div v-for="index in 20" :key="'top'+index">
+          <div v-for="index in 10" :key="'top'+index">
             <CardTopQuestion :index="index"/>
           </div>
         </v-card-text>
