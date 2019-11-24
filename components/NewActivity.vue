@@ -58,7 +58,7 @@ export default {
     selected: [2],
     items: [
       {
-        id: "1",
+        id: "12131",
         action: "15 min",
         headline: "Lorem",
         title: "Lorem",
@@ -82,7 +82,7 @@ export default {
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
       },
       {
-        id: "4",
+        id: "43123",
         action: "15 min",
         headline: "Lorem",
         title: "Lorem",
@@ -90,7 +90,7 @@ export default {
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
       },
       {
-        id: "5",
+        id: "315",
         action: "15 min",
         headline: "Lorem",
         title: "Lorem",
@@ -98,7 +98,7 @@ export default {
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
       },
       {
-        id: "6",
+        id: "216",
         action: "15 min",
         headline: "Lorem",
         title: "Lorem",
