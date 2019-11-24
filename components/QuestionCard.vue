@@ -1,0 +1,104 @@
+<template>
+  <div>
+    <v-list two-line>
+      <v-list-item-group
+        v-model="selected"
+        multiple
+        active-class="primary--text"
+      >
+        <template v-for="(item, index) in items">
+          <v-list-item :key="'list'+item.id">
+            <template v-slot:default="{ active, toggle }">
+              <v-list-item-avatar>
+                <v-img src="/susi.jpg"></v-img>
+              </v-list-item-avatar>
+              <v-list-item-content>
+                <v-list-item-title v-text="item.title"></v-list-item-title>
+                <v-list-item-subtitle
+                  class="text--primary"
+                  v-text="item.headline"
+                ></v-list-item-subtitle>
+                <v-list-item-subtitle
+                  v-text="item.subtitle"
+                ></v-list-item-subtitle>
+              </v-list-item-content>
+
+              <v-list-item-action>
+                <v-list-item-action-text
+                  v-text="item.action"
+                ></v-list-item-action-text>
+                <v-icon v-if="!active" color="grey lighten-1">
+                  mdi-star-outline
+                </v-icon>
+
+                <v-icon v-else color="yellow">
+                  mdi-star
+                </v-icon>
+              </v-list-item-action>
+            </template>
+          </v-list-item>
+
+          <v-divider v-if="index + 1 < items.length" :key="index"></v-divider>
+        </template>
+      </v-list-item-group>
+    </v-list>
+  </div>
+</template>
+
+<script>
+export default {
+  data: () => ({
+    selected: [2],
+    items: [
+      {
+        id: "231",
+        action: "15 min",
+        headline: "Lorem",
+        title: "Lorem",
+        subtitle:
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+      },
+      {
+        id: "12",
+        action: "15 min",
+        headline: "Lorem",
+        title: "Lorem",
+        subtitle:
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+      },
+      {
+        id: "13",
+        action: "15 min",
+        headline: "Lorem",
+        title: "Lorem",
+        subtitle:
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+      },
+      {
+        id: "4311",
+        action: "15 min",
+        headline: "Lorem",
+        title: "Lorem",
+        subtitle:
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+      },
+      {
+        id: "5",
+        action: "15 min",
+        headline: "Lorem",
+        title: "Lorem",
+        subtitle:
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+      },
+      {
+        id: "6",
+        action: "15 min",
+        headline: "Lorem",
+        title: "Lorem",
+        subtitle:
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+      }
+    ]
+  })
+};
+</script>
