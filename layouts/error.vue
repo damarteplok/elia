@@ -1,31 +1,29 @@
 <template>
-  <div>
-    <v-card class="elevation-12">
-      <v-img
-        height="350"
-        aspect-ratio="2"
-        :src="error.statusCode === 404 ? '/404.jpg' : '/500.png'"
-      ></v-img>
-      <v-card-text>
-        <p v-if="error.statusCode === 404" class="display-1 text--primary">
-          404
-        </p>
-        <p v-else class="display-1 text--primary">
-          500
-        </p>
-        <div class="text--primary">
-          {{
-            error.statusCode === 404
-              ? "Halaman tidak ditemukan !"
-              : "Terjadi kesalahan !"
-          }}<br />
-          <NuxtLink to="/">
-            Beranda
-          </NuxtLink>
-        </div>
-      </v-card-text>
-    </v-card>
-  </div>
+  <v-card class="elevation-12">
+    <v-img
+      height="350"
+      aspect-ratio="2"
+      :src="error.statusCode === 404 ? '/404.jpg' : '/500.png'"
+    ></v-img>
+    <v-card-text>
+      <p v-if="error.statusCode === 404" class="display-1 text--primary">
+        404
+      </p>
+      <p v-else class="display-1 text--primary">
+        500
+      </p>
+      <div class="text--primary">
+        {{
+          error.statusCode === 404
+            ? "Halaman tidak ditemukan !"
+            : "Terjadi kesalahan !"
+        }}<br />
+        <NuxtLink to="/">
+          Beranda
+        </NuxtLink>
+      </div>
+    </v-card-text>
+  </v-card>
 </template>
 
 <script>

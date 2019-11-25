@@ -9,25 +9,16 @@
     ></v-text-field>
 
     <v-text-field
-      v-model="title"
-      :rules="titleRules"
-      label="Name"
-      required
-      outlined
-    ></v-text-field>
-
-    <v-text-field
       v-model="password"
-      :append-icon="show1 ? 'mdi-eye' : 'mdi-eye-off'"
+      :append-icon="show4 ? 'mdi-eye' : 'mdi-eye-off'"
       :rules="[rules.required, rules.min]"
-      :type="show1 ? 'text' : 'password'"
+      :type="show4 ? 'text' : 'password'"
       name="input-10-1"
       label="Password"
       hint="At least 8 characters"
-      @click:append="show1 = !show1"
+      @click:append="show4 = !show4"
       outlined
     ></v-text-field>
-
     <v-btn
       block
       :disabled="!valid"
@@ -35,19 +26,23 @@
       class="mr-2"
       @click="validate"
     >
-      Daftar
+      Masuk
     </v-btn>
-
-    <v-btn block outlined color="indigo" class="mt-2">
-      Facebook
-    </v-btn>
-    <v-btn block color="red" class="mt-2" outlined>
-      Google
-    </v-btn>
-
     <v-btn to="/" block color="secondary" class="mt-2">
       Kembali
     </v-btn>
+    <v-row>
+      <v-col cols="12">
+        <v-row align="center" justify="center">
+          <v-btn class="mx-2" fab dark small outlined color="indigo">
+            <v-icon dark>mdi-facebook</v-icon>
+          </v-btn>
+          <v-btn class="mx-2" fab dark small outlined color="red">
+            <v-icon dark>mdi-google</v-icon>
+          </v-btn>
+        </v-row>
+      </v-col>
+    </v-row>
   </v-form>
 </template>
 
@@ -55,18 +50,13 @@
 export default {
   data: () => ({
     valid: true,
-    title: "",
-    titleRules: [
-      v => !!v || "Title is required",
-      v => (v && v.length <= 191) || "Title must be less than 191 characters"
-    ],
     email: "",
     emailRules: [
       v => !!v || "E-mail is required",
       v => /.+@.+\..+/.test(v) || "E-mail must be valid"
     ],
-    show1: false,
-    password:'',
+    show4: false,
+    password: "",
     rules: {
       required: value => !!value || "Required.",
       min: v => v.length >= 8 || "Min 8 characters",

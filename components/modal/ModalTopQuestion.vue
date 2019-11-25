@@ -21,7 +21,7 @@
 </template>
 
 <script>
-import CardTopQuestion from '@/components/CardTopQuestion'
+import CardTopQuestion from '@/components/card/CardTopQuestion'
 export default {
   components: {
     CardTopQuestion

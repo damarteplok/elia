@@ -8,7 +8,7 @@
       app
     >
       <v-list nav subheader>
-        <v-list-item @click.stop="miniVariant = !miniVariant">
+        <!-- <v-list-item @click.stop="miniVariant = !miniVariant">
           <v-list-item-action>
             <v-icon>
               mdi-{{ `chevron-${miniVariant ? "right" : "left"}` }}
@@ -17,8 +17,8 @@
           <v-list-item-content>
             <v-list-item-title v-text="'Menu'"/>
           </v-list-item-content>
-        </v-list-item>
-
+        </v-list-item> -->
+        <v-subheader v-if="!miniVariant">Menu</v-subheader>
         <v-list-item
           v-for="(item, i) in items"
           :key="i"
@@ -28,7 +28,15 @@
           color="primary"
         >
           <v-list-item-action>
-            <v-icon>{{ item.icon }}</v-icon>
+            <template v-if="item.title == 'Pesan'">
+              <v-badge overlap>
+                <template v-slot:badge>0</template>
+                <v-icon>{{ item.icon }}</v-icon>
+              </v-badge>
+            </template>
+            <template v-else>
+              <v-icon>{{ item.icon }}</v-icon>
+            </template>
           </v-list-item-action>
           <v-list-item-content>
             <v-list-item-title v-text="item.title" />
@@ -45,45 +53,52 @@
           color="primary"
         >
           <v-list-item-action>
-            <v-icon>{{ item.icon }}</v-icon>
+            <template
+              v-if="item.title == 'Pertanyaanmu' || item.title == 'Kelasmu'"
+            >
+              <v-badge overlap>
+                <template v-slot:badge>!</template>
+                <v-icon>{{ item.icon }}</v-icon>
+              </v-badge>
+            </template>
+            <template v-else>
+              <v-icon>{{ item.icon }}</v-icon>
+            </template>
           </v-list-item-action>
           <v-list-item-content>
             <v-list-item-title v-text="item.title" />
           </v-list-item-content>
         </v-list-item>
-
       </v-list>
     </v-navigation-drawer>
     <v-app-bar :clipped-left="clipped" fixed app dense>
+      <v-app-bar-nav-icon @click.stop="drawer = !drawer" />
+      <v-btn icon @click.stop="miniVariant = !miniVariant">
+        <v-icon>mdi-{{ `chevron-${miniVariant ? "right" : "left"}` }}</v-icon>
+      </v-btn>
       <v-toolbar-title v-text="title" />
       <v-spacer />
-      <v-text-field
-        class="mx-4 justify-center"
-        flat
-        hide-details
-        label="Cari jawaban berdasarkan kata kunci, tag, atau topik..."
-        prepend-inner-icon="mdi-magnify"
-        solo
-      ></v-text-field>
+      <div class="d-none d-sm-none d-md-flex align-center" style="width: 50%">
+        <v-text-field
+          class="mx-4 justify-center"
+          flat
+          hide-details
+          label="Cari jawaban berdasarkan kata kunci, tag, atau topik..."
+          prepend-inner-icon="mdi-magnify"
+          solo
+        ></v-text-field>
+      </div>
       <v-spacer />
-      <ModalTopQuestion />
-      <ModalPertanyaan />
-      <v-btn
-        class="mx-1"
-        small
-        color="secondary"
-        to="/login"
-      >
-        Login
-      </v-btn>
-      <v-btn
-        class="mx-1"
-        small
-        color="primary"
-        to="/register"
-      >
-        Sign Up
-      </v-btn>
+      <div class="d-none d-sm-none d-md-flex align-center">
+        <ModalTopQuestion />
+        <ModalPertanyaan />
+        <v-btn class="mx-1" small color="secondary" to="/login">
+          Login
+        </v-btn>
+        <v-btn class="mx-1" small color="primary" to="/register">
+          Sign Up
+        </v-btn>
+      </div>
     </v-app-bar>
     <v-content>
       <v-container>
@@ -98,8 +113,8 @@
 </template>
 
 <script>
-import ModalPertanyaan from '~/components/ModalPertanyaan.vue'
-import ModalTopQuestion from '~/components/ModalTopQuestion.vue'
+import ModalPertanyaan from "@/components/modal/ModalPertanyaan.vue";
+import ModalTopQuestion from "@/components/modal/ModalTopQuestion.vue";
 
 export default {
   components: {
@@ -119,7 +134,7 @@ export default {
         },
         {
           icon: "mdi-message",
-          title: "Pertayaanmu",
+          title: "Pertanyaanmu",
           to: "/questions/me"
         },
         {

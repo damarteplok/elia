@@ -3,7 +3,7 @@
     <v-card>
       <v-card-title class="justify-center">Aktifitas Terbaru</v-card-title>
       <v-divider></v-divider>
-      <v-card-text>
+      <v-card-text class="pa-0">
         <v-list two-line>
           <v-list-item-group
             v-model="selected"

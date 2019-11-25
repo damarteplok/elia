@@ -10,8 +10,8 @@
 </template>
 
 <script>
-import NewActivity from "@/components/NewActivity";
-import AboutBerbageek from "@/components/AboutBerbageek";
+import NewActivity from "@/components/card/NewActivity";
+import AboutBerbageek from "@/components/card/AboutBerbageek";
 export default {
   components: {
     NewActivity,

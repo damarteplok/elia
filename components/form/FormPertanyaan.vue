@@ -49,11 +49,11 @@
       required
     ></v-checkbox> -->
 
-    <v-btn :disabled="!valid" color="primary" class="mr-1" @click="validate">
+    <v-btn :block="$vuetify.breakpoint.xsOnly" :disabled="!valid" color="primary" class="mr-1 mb-1" @click="validate">
       Ajukan Pertanyaan
     </v-btn>
 
-    <v-btn color="secondary"  @click="reset">
+    <v-btn :block="$vuetify.breakpoint.xsOnly" color="secondary" class="mr-1 mb-1" @click="reset">
       Keluar
     </v-btn>
   </v-form>

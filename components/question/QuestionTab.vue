@@ -9,7 +9,7 @@
 
       <v-tab-item value="popular">
         <v-card flat tile>
-          <v-card-text><QuestionCard /></v-card-text>
+          <v-card-text class="pa-0"><QuestionCard /></v-card-text>
         </v-card>
       </v-tab-item>
 
@@ -22,7 +22,7 @@
 
       <v-tab-item value="new">
         <v-card flat tile>
-          <v-card-text><QuestionCard /></v-card-text>
+          <v-card-text class="pa-0"><QuestionCard /></v-card-text>
         </v-card>
       </v-tab-item>
 
@@ -35,7 +35,7 @@
 
       <v-tab-item value="month">
         <v-card flat tile>
-          <v-card-text><QuestionCard /></v-card-text>
+          <v-card-text class="pa-0"><QuestionCard /></v-card-text>
         </v-card>
       </v-tab-item>
 
@@ -45,7 +45,7 @@
 
       <v-tab-item value="week">
         <v-card flat tile>
-          <v-card-text><QuestionCard /></v-card-text>
+          <v-card-text class="pa-0"><QuestionCard /></v-card-text>
         </v-card>
       </v-tab-item>
     </v-tabs>
@@ -53,7 +53,7 @@
 </template>
 
 <script>
-import QuestionCard from "@/components/QuestionCard";
+import QuestionCard from "@/components/question/QuestionCard";
 
 export default {
   components: {

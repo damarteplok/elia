@@ -27,7 +27,7 @@
 </template>
 
 <script>
-import FormRegister from "@/components/FormRegister";
+import FormRegister from "@/components/form/FormRegister";
 export default {
   layout: "loginregister",
   components: {

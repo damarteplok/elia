@@ -1,11 +1,11 @@
 <template>
   <v-container fluid>
     <v-row>
-      <v-col cols="9">
+      <v-col :xs="12" :sm="12" :md="9" :lg="9" :cols="12">
         <h2>Pertanyaan Terbaru</h2>
         <QuestionMenu />
       </v-col>
-      <v-col cols="3">
+      <v-col :xs="12" :sm="12" :md="3" :lg="3" :cols="12">
         <SideBar />
       </v-col>
     </v-row>
@@ -13,8 +13,8 @@
 </template>
 
 <script>
-import QuestionMenu from '@/components/QuestionMenu'
-import SideBar from '@/components/SideBar'
+import QuestionMenu from '@/components/question/QuestionMenu'
+import SideBar from '@/components/skeleton/SideBar'
 export default {
   components: {
     SideBar,

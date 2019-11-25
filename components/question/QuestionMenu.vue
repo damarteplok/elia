@@ -8,7 +8,7 @@
 
 
 <script>
-import QuestionTab from '@/components/QuestionTab'
+import QuestionTab from '@/components/question/QuestionTab'
 
 export default {
     components: {
