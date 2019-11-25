@@ -5,7 +5,7 @@
         <v-btn
           dark
           v-on="on"
-          style="margin-right: .25rem; margin-left: .25rem;"
+          class="mx-1"
           small
           color="primary"
         >

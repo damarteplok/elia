@@ -11,7 +11,7 @@
         <v-divider></v-divider>
         <v-card-text style="height: 80vh; padding-right:1rem; padding-left: 1rem;">
           <div v-for="index in 10" :key="'top'+index">
-            <CardTopQuestion :index="index"/>
+            <CardTopQuestion :index="index" @dialogShowTop="dialog = false"/>
           </div>
         </v-card-text>
         <v-divider></v-divider>

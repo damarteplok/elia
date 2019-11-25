@@ -69,7 +69,7 @@
       <ModalTopQuestion />
       <ModalPertanyaan />
       <v-btn
-        style="margin-right: .25rem; margin-left: .25rem;"
+        class="mx-1"
         small
         color="secondary"
         to="/login"
@@ -77,10 +77,10 @@
         Login
       </v-btn>
       <v-btn
-        style="margin-right: .25rem; margin-left: .25rem;"
+        class="mx-1"
         small
         color="primary"
-        to="register"
+        to="/register"
       >
         Sign Up
       </v-btn>
@@ -160,7 +160,7 @@ export default {
           to: "/messages"
         }
       ],
-      miniVariant: false,
+      miniVariant: true,
       right: true,
       rightDrawer: false,
       title: "BerbaGeek"

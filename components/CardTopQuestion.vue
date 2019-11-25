@@ -10,7 +10,12 @@
       Kenapa saya jomblo gan?
     </v-card-title>
     <v-card-actions>
-      <v-btn :to="'/questions/all/'+index" color="primary" text>
+      <v-btn
+        :to="'/questions/all/' + index"
+        color="primary"
+        text
+        @click="emitParent"
+      >
         Jawab
       </v-btn>
 
@@ -27,6 +32,11 @@ export default {
     index: {
       type: Number,
       required: true
+    }
+  },
+  methods: {
+    emitParent() {
+      this.$emit("dialogShowTop");
     }
   }
 };

@@ -49,11 +49,11 @@
       required
     ></v-checkbox> -->
 
-    <v-btn :disabled="!valid" color="primary" class="mr-4" @click="validate">
+    <v-btn :disabled="!valid" color="primary" class="mr-1" @click="validate">
       Ajukan Pertanyaan
     </v-btn>
 
-    <v-btn color="secondary" class="mr-4" @click="reset">
+    <v-btn color="secondary"  @click="reset">
       Keluar
     </v-btn>
   </v-form>
