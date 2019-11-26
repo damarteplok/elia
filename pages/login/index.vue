@@ -42,7 +42,7 @@ export default {
     dark2() {
       var date = new Date();
       let thisdark2 = date.getHours() > 22 || date.getHours() < 6;
-      return !thisdark2
+      return thisdark2
       
     }
   },
