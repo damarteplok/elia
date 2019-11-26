@@ -42,8 +42,7 @@ export default {
     dark4() {
       var date = new Date();
       let thisdark4 = date.getHours() > 22 || date.getHours() < 6;
-      thisdark4 = !thisdark4
-      return thisdark4
+      return !thisdark4
     }
   },
 };

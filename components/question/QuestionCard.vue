@@ -129,8 +129,7 @@ export default {
     dark3() {
       var date = new Date();
       let thisdark3 = date.getHours() > 22 || date.getHours() < 6;
-      thisdark3 = !thisdark3
-      return thisdark3
+      return !thisdark3
     }
   },
   methods: {
