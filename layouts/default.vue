@@ -123,6 +123,7 @@ export default {
   },
   data() {
     return {
+      checkNight: false,
       clipped: true,
       drawer: true,
       fixed: false,
@@ -180,6 +181,10 @@ export default {
       rightDrawer: false,
       title: "BerbaGeek"
     };
-  }
+  },
+  // created() {
+    // var date = new Date();
+    // this.checkNight = (date.getHours() > 22 || date.getHours() < 6);
+  // }
 };
 </script>

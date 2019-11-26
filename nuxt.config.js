@@ -1,5 +1,6 @@
 import colors from 'vuetify/es5/util/colors'
-
+var date = new Date();
+var bol = (date.getHours() > 22 || date.getHours() < 6);
 export default {
   mode: 'universal',
   /*
@@ -50,16 +51,17 @@ export default {
   vuetify: {
     customVariables: ['~/assets/variables.scss'],
     theme: {
-      dark: false,
+      dark: bol,
       themes: {
         dark: {
-          primary: colors.blue.darken2,
+          primary: '#9147FF',
           accent: colors.grey.darken3,
           secondary: colors.amber.darken3,
           info: colors.teal.lighten1,
           warning: colors.amber.base,
           error: colors.deepOrange.accent4,
-          success: colors.green.accent3
+          success: colors.green.accent3,
+          anchor: '#A970FF',
         },
         light: {
           primary: '#772ce8',

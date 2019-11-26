@@ -1,47 +1,63 @@
 <template>
   <div>
     <v-list two-line>
-      <v-list-item-group
-        v-model="selected"
-        multiple
-        active-class="primary--text"
-      >
+      <v-list-item-group v-model="selected" multiple active-class="primary--text">
         <template v-for="(item, index) in items">
-          <v-list-item :key="'list'+item.id">
+          <v-list-item :key="'list' + item.id">
             <template v-slot:default="{ active, toggle }">
-              <v-list-item-avatar>   
+              <v-list-item-avatar>
                 <v-img src="/default_avatar.png" @click="loadUser"></v-img>
               </v-list-item-avatar>
               <v-list-item-content>
-                <v-list-item-title> <nuxt-link class="tdn font-weight-bold" to="/questions/all/1">{{item.title}}</nuxt-link> </v-list-item-title>
+                <v-list-item-title>
+                  <nuxt-link class="tdn font-weight-bold" to="/questions/all/1">{{ item.title }}</nuxt-link>
+                </v-list-item-title>
                 <v-list-item-subtitle>
-                {{item.headline}} <nuxt-link class="tdn font-weight-bold" to="/questions/all/1">damar</nuxt-link> <span class="font-weight-light yellow darken-1--text"><v-icon small color="grey lighten-1">mdi-star-outline</v-icon>700</span> <span class="font-weight-light yellow darken-1--text"><v-icon small color="grey lighten-1">mdi-eye-outline</v-icon> 20</span>
+                  {{ item.headline }}
+                  <nuxt-link class="tdn font-weight-bold" to="/questions/all/1">damar</nuxt-link>
+                  <template v-if="dark">
+                    <span class="font-weight-light" style="color: #C5BB60;">
+                      <v-icon small color="yellow lighten-1">mdi-star-outline</v-icon>700
+                    </span>
+                    <span class="font-weight-light" style="color: #C5BB60;">
+                      <v-icon small color="yellow lighten-1">mdi-eye-outline</v-icon>20
+                    </span>
+                  </template>
+                  <template v-else>
+                    <span class="font-weight-light yellow darken-1--text">
+                      <v-icon small color="grey lighten-1">mdi-star-outline</v-icon>700
+                    </span>
+                    <span class="font-weight-light yellow darken-1--text">
+                      <v-icon small color="grey lighten-1">mdi-eye-outline</v-icon>20
+                    </span>
+                  </template>
                 </v-list-item-subtitle>
-                <v-list-item-subtitle
-                  class="text--primary"
-                  v-text="item.subtitle"
-                ></v-list-item-subtitle>
-                <v-list-item-subtitle
-                >
-                  <span class="font-weight-light yellow lighten-1--text">php</span>  
-                  <span class="font-weight-light yellow lighten-1--text">laravel</span>      
-
+                <v-list-item-subtitle class="text--primary" v-text="item.subtitle"></v-list-item-subtitle>
+                <v-list-item-subtitle>
+                  <template v-if="dark">
+                    <span class="font-weight-light" style="color: #C5BB60;">php</span>
+                    <span class="font-weight-light" style="color: #C5BB60;">laravel</span>
+                  </template>
+                  <template v-else>
+                    <span class="font-weight-light yellow lighten-1--text">php</span>
+                    <span class="font-weight-light yellow lighten-1--text">laravel</span>
+                  </template>
                 </v-list-item-subtitle>
               </v-list-item-content>
 
-              <v-list-item-action >
-                <v-list-item-action-text
-                  v-text="item.action"
-                ></v-list-item-action-text>
-                <v-icon v-if="!active" color="grey lighten-1">
-                  mdi-star-outline
-                </v-icon>
+              <v-list-item-action>
+                <v-list-item-action-text v-text="item.action"></v-list-item-action-text>
+                <v-icon v-if="!active" color="grey lighten-1">mdi-star-outline</v-icon>
 
-                <v-icon v-else color="yellow">
-                  mdi-star
-                </v-icon>
-                <v-list-item-action-text
-                ><span class="font-weight-light yellow lighten-1--text">120 jawaban</span></v-list-item-action-text>
+                <v-icon v-else color="yellow">mdi-star</v-icon>
+                <v-list-item-action-text>
+                  <template v-if="dark">
+                    <span class="font-weight-light" style="color: #C5BB60;">120 Jawaban</span>
+                  </template>
+                  <template v-else>
+                    <span class="font-weight-light yellow lighten-1--text">120 Jawaban</span>
+                  </template>
+                </v-list-item-action-text>
               </v-list-item-action>
             </template>
           </v-list-item>
@@ -57,6 +73,7 @@
 export default {
   data: () => ({
     selected: [2],
+    dark: false,
     items: [
       {
         id: "231",
@@ -108,9 +125,13 @@ export default {
       }
     ]
   }),
+  created() {
+    var date = new Date();
+    this.dark = date.getHours() > 22 || date.getHours() < 6;
+  },
   methods: {
     loadUser() {
-      this.$router.push(`/profiles/me`)
+      this.$router.push(`/profiles/me`);
     }
   }
 };
