@@ -35,7 +35,7 @@ export default {
   },
   data() {
     return {
-      dark2: ''
+     
     };
   },
   computed: {
