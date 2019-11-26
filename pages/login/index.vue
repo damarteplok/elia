@@ -1,5 +1,5 @@
 <template>
-  <v-row class="row-custom-login-modal" no-gutters>
+  <v-row class="row-custom-login-modal" :style="dark ? {backgroundColor: '#303030'} : ''" no-gutters>
     <v-col cols="12" sm="6" class="pl-4 pb-4 pr-4 pt-4">
       <h2>Masuk BerbaGeek</h2>
       <div class="mb-8"></div>
@@ -34,8 +34,15 @@ export default {
     FormLogin
   },
   data() {
-    return {};
-  }
+    return {
+      dark: ''
+    };
+  },
+  created() {
+    var date = new Date();
+    this.dark = date.getHours() > 22 || date.getHours() < 6;
+    this.dark = !this.dark
+  },
 };
 </script>
 
