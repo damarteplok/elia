@@ -1,5 +1,5 @@
 <template>
-  <v-row class="row-custom-login-modal" :style="dark ? {backgroundColor: '#303030'} : ''" no-gutters>
+  <v-row class="row-custom-login-modal" :style="dark4 ? {backgroundColor: '#303030'} : ''" no-gutters>
     
     <v-col cols="12" sm="6" class="custom-register-left">
       <v-row class="fill-height" no-gutters align="center" justify="center">
@@ -35,13 +35,16 @@ export default {
   },
   data() {
     return {
-      dark: ''
+      
     };
   },
-  created() {
-    var date = new Date();
-    this.dark = date.getHours() > 22 || date.getHours() < 6;
-    this.dark = !this.dark
+  computed: {
+    dark4() {
+      var date = new Date();
+      let thisdark4 = date.getHours() > 22 || date.getHours() < 6;
+      thisdark4 = !thisdark4
+      return thisdark4
+    }
   },
 };
 </script>

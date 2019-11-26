@@ -15,7 +15,7 @@
                 <v-list-item-subtitle>
                   {{ item.headline }}
                   <nuxt-link class="tdn font-weight-bold" to="/questions/all/1">damar</nuxt-link>
-                  <template v-if="dark">
+                  <template v-if="dark3">
                     <span class="font-weight-light mr-1" style="color: #C5BB60;">
                       <v-icon small color="yellow lighten-1">mdi-star-outline</v-icon>700
                     </span>
@@ -34,7 +34,7 @@
                 </v-list-item-subtitle>
                 <v-list-item-subtitle class="text--primary" v-text="item.subtitle"></v-list-item-subtitle>
                 <v-list-item-subtitle>
-                  <template v-if="dark">
+                  <template v-if="dark3">
                     <span class="font-weight-light" style="color: #C5BB60;">php</span>
                     <span class="font-weight-light" style="color: #C5BB60;">laravel</span>
                   </template>
@@ -51,7 +51,7 @@
 
                 <v-icon v-else color="yellow">mdi-star</v-icon>
                 <v-list-item-action-text>
-                  <template v-if="dark">
+                  <template v-if="dark3">
                     <span class="font-weight-light" style="color: #C5BB60;">120 Jawaban</span>
                   </template>
                   <template v-else>
@@ -73,7 +73,7 @@
 export default {
   data: () => ({
     selected: [2],
-    dark: false,
+    dark3: false,
     items: [
       {
         id: "231",
@@ -125,10 +125,13 @@ export default {
       }
     ]
   }),
-  created() {
-    var date = new Date();
-    this.dark = date.getHours() > 22 || date.getHours() < 6;
-    this.dark = !this.dark
+  computed: {
+    dark3() {
+      var date = new Date();
+      let thisdark3 = date.getHours() > 22 || date.getHours() < 6;
+      thisdark3 = !thisdark3
+      return thisdark3
+    }
   },
   methods: {
     loadUser() {
