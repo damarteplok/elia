@@ -26,7 +26,7 @@ export default {
 
 <style>
 .row-custom-login {
-  background-image: url("/1.jpg");
+  background-image: url("/bg_1.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;

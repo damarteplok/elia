@@ -23,7 +23,7 @@
           v-for="(item, i) in items"
           :key="i"
           :to="item.to"
-          router
+          nuxt
           exact
           color="primary"
         >
@@ -48,7 +48,7 @@
           v-for="(item, i) in dashboards"
           :key="'dashboard' + i"
           :to="item.to"
-          router
+          nuxt
           exact
           color="primary"
         >

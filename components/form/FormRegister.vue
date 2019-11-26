@@ -36,7 +36,7 @@
     >
       Daftar
     </v-btn>
-    <v-btn to="/" block color="secondary" class="mt-2">
+    <v-btn to="/" block color="secondary" class="mt-2" nuxt>
       Kembali
     </v-btn>
     <v-row>

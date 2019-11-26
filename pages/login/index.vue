@@ -16,7 +16,7 @@
             digital (programming, desain, marketing, dsb)
           </p>
           <v-row no-gutters justify="center">
-            <v-btn to="/register" color="primary" class="mt-2">
+            <v-btn to="/register" color="primary" class="mt-2" nuxt>
               Daftar
             </v-btn>
           </v-row>
@@ -48,7 +48,7 @@ export default {
 .custom-login-right {
   border-top-right-radius: 20px;
   border-bottom-right-radius: 20px;
-  background-image: url("/cloud.jpeg");
+  background-image: url("/bg_2.jpeg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;

@@ -9,7 +9,7 @@
             Apakah kamu sudah mempunyai akun BerbaGeek? Segera masuk untuk bertemu dan belajar dengan orang-orang di insdustri digital.
           </p>
           <v-row no-gutters justify="center">
-            <v-btn to="/login" color="primary" class="mt-2">
+            <v-btn to="/login" color="primary" class="mt-2" nuxt>
               Masuk
             </v-btn>
           </v-row>
@@ -48,7 +48,7 @@ export default {
 .custom-register-left {
   border-top-left-radius: 20px;
   border-bottom-left-radius: 20px;
-  background-image: url("/cloud.jpeg");
+  background-image: url("/bg_2.jpeg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;

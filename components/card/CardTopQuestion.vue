@@ -15,6 +15,7 @@
         color="primary"
         text
         @click="emitParent"
+        nuxt
       >
         Jawab
       </v-btn>
