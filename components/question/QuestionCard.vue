@@ -16,18 +16,18 @@
                   {{ item.headline }}
                   <nuxt-link class="tdn font-weight-bold" to="/questions/all/1">damar</nuxt-link>
                   <template v-if="dark">
-                    <span class="font-weight-light" style="color: #C5BB60;">
+                    <span class="font-weight-light mr-1" style="color: #C5BB60;">
                       <v-icon small color="yellow lighten-1">mdi-star-outline</v-icon>700
                     </span>
-                    <span class="font-weight-light" style="color: #C5BB60;">
+                    <span class="font-weight-light mr-1" style="color: #C5BB60;">
                       <v-icon small color="yellow lighten-1">mdi-eye-outline</v-icon>20
                     </span>
                   </template>
                   <template v-else>
-                    <span class="font-weight-light yellow darken-1--text">
+                    <span class="font-weight-light mr-1 yellow darken-1--text">
                       <v-icon small color="grey lighten-1">mdi-star-outline</v-icon>700
                     </span>
-                    <span class="font-weight-light yellow darken-1--text">
+                    <span class="font-weight-light mr-1 yellow darken-1--text">
                       <v-icon small color="grey lighten-1">mdi-eye-outline</v-icon>20
                     </span>
                   </template>
@@ -128,6 +128,7 @@ export default {
   created() {
     var date = new Date();
     this.dark = date.getHours() > 22 || date.getHours() < 6;
+    this.dark = !this.dark
   },
   methods: {
     loadUser() {
