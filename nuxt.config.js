@@ -32,6 +32,10 @@ export default {
   ** Plugins to load before mounting the App
   */
   plugins: [
+    {
+      src: '@/plugins/vueyoutube.js',
+      ssr: false
+    }
   ],
   /*
   ** Nuxt.js dev-modules

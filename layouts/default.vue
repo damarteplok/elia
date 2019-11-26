@@ -176,7 +176,7 @@ export default {
           to: "/messages"
         }
       ],
-      miniVariant: true,
+      miniVariant: false,
       right: true,
       rightDrawer: false,
       title: "BerbaGeek"

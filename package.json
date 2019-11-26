@@ -12,7 +12,8 @@
     "heroku-postbuild": "npm run build"
   },
   "dependencies": {
-    "nuxt": "^2.0.0"
+    "nuxt": "^2.0.0",
+    "vue-youtube": "^1.4.0"
   },
   "devDependencies": {
     "@nuxtjs/vuetify": "^1.0.0"
