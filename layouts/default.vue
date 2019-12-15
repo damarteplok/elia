@@ -104,7 +104,7 @@
     </v-content>
 
     <v-footer :fixed="fixed" app>
-      <span>&copy; tes tes 2019</span>
+      <span>&copy; damar 2019</span>
     </v-footer>
   </v-app>
 </template>
@@ -182,6 +182,9 @@ export default {
   computed: {
     mode() {
       return this.$store.state.dark;
+    },
+    mini() {
+      return this.$store.state.mini;
     }
   },
   watch: {
@@ -198,6 +201,9 @@ export default {
       } else {
         this.$vuetify.theme.dark = false;
       }
+    },
+    miniVariant() {
+        this.$store.dispatch("setMini", this.miniVariant);
     }
   },
   created() {
