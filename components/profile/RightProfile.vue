@@ -1,7 +1,7 @@
 <template>
   <div>
     <v-row dense>
-      <v-col v-for="(item, i) in items" :key="i" :cols="12">
+      <v-col v-for="(item, i) in items" :key="i" :cols="12" :style="i == 0 ? {'paddingTop': '0px'} : {}">
         <v-card :color="item.color" dark>
           <div class="d-flex flex-no-wrap justify-space-between">
             <div>

@@ -24,7 +24,7 @@
     </v-card-text>
 
     <v-card-text>
-      <div class="display-1 font-weight-thin">Last 24h Point</div>
+      <div class="display-1 font-weight-thin" style="color: #fff;">Last 24h Point</div>
     </v-card-text>
   </v-card>
 </template>
