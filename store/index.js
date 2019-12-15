@@ -1,7 +1,7 @@
 import Vuex from 'vuex';
 import DarkMode from "@/store/darkmode";
 var date = new Date();
-var bolDark = (date.getHours() > 22 || date.getHours() < 6);
+var bolDark = (date.getHours() > 17 || date.getHours() < 6);
 export const state = () => ({
     dark: null,
 })
