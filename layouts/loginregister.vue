@@ -1,5 +1,5 @@
 <template>
-  <v-app>
+  <v-app :dark="mode">
     <v-content>
       <v-container
         fluid
@@ -20,7 +20,12 @@
 export default {
   data() {
     return {};
-  }
+  },
+  computed: {
+    mode () {
+      return this.$store.state.dark
+    }
+  },
 };
 </script>
 

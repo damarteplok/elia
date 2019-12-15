@@ -39,22 +39,13 @@
     <v-btn to="/" block color="secondary" class="mt-2" nuxt>
       Kembali
     </v-btn>
-    <v-row>
-      <v-col cols="12">
-        <v-row align="center" justify="center">
-          <v-btn class="mx-2" fab dark small outlined color="indigo">
-            <v-icon dark>mdi-facebook</v-icon>
-          </v-btn>
-          <v-btn class="mx-2" fab dark small outlined color="red">
-            <v-icon dark>mdi-google</v-icon>
-          </v-btn>
-        </v-row>
-      </v-col>
-    </v-row>
+    <SosmedLogin />
   </v-form>
 </template>
 
 <script>
+import SosmedLogin from '@/components/button/SosmedLogin'
+
 export default {
   data: () => ({
     valid: true,
@@ -76,7 +67,9 @@ export default {
       emailMatch: () => "The email and password you entered don't match"
     }
   }),
-
+  components: {
+    SosmedLogin
+  },
   methods: {
     validate() {
       if (this.$refs.form.validate()) {

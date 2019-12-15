@@ -5,14 +5,20 @@
       <v-divider></v-divider>
       <v-card-text>
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-          aliquip ex ea commodo consequat. Duis aute irure dolor in
-          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-          culpa qui officia deserunt mollit anim id est laborum.
+          Selamat datang di Berbageek! Berbageek adalah tempat berbagi pengetahuan
+          programming, ui/ux design, digital marketing & project management dengan 
+          konsep tanya-jawab, sehingga kita bisa menciptakan solusi lebih cepat dan 
+          lebih baik. berikut adalah rule untuk bertanya:
         </p>
+        <ul>
+          <li>
+            Jangan duplikasi pertanyaan. Dicari dulu pertanyaan yang serupa.
+          </li>
+          <li>
+            Buatlah pertanyaan yang generik. Tidak boleh bertanya spesifik menyebutkan 
+            nama proyek atau nama perusahaan.
+          </li>
+        </ul>
       </v-card-text>
     </v-card>
   </div>

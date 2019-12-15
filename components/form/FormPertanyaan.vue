@@ -9,13 +9,7 @@
       :counter="191"
     ></v-text-field>
 
-    <v-textarea
-      v-model="name"
-      :rules="nameRules"
-      label="Deskripsi pertanyaan"
-      required
-      outlined
-    ></v-textarea>
+    <v-textarea v-model="name" :rules="nameRules" label="Deskripsi pertanyaan" required outlined></v-textarea>
 
     <v-select
       v-model="select"
@@ -23,7 +17,7 @@
       :rules="[v => !!v || 'Category is required']"
       label="Pilih Kategori"
       required
-      outlined=""
+      outlined
     ></v-select>
 
     <v-combobox
@@ -35,27 +29,20 @@
       :rules="[v => !!v || 'Tag is required']"
     ></v-combobox>
 
-    <!-- <v-text-field
-      v-model="email"
-      :rules="emailRules"
-      label="E-mail"
-      required
-    ></v-text-field> -->
+    <v-btn
+      :block="$vuetify.breakpoint.xsOnly"
+      :disabled="!valid"
+      color="primary"
+      class="mr-1 mb-1"
+      @click="validate"
+    >Ajukan Pertanyaan</v-btn>
 
-    <!-- <v-checkbox
-      v-model="checkbox"
-      :rules="[v => !!v || 'You must agree to continue!']"
-      label="Do you agree?"
-      required
-    ></v-checkbox> -->
-
-    <v-btn :block="$vuetify.breakpoint.xsOnly" :disabled="!valid" color="primary" class="mr-1 mb-1" @click="validate">
-      Ajukan Pertanyaan
-    </v-btn>
-
-    <v-btn :block="$vuetify.breakpoint.xsOnly" color="secondary" class="mr-1 mb-1" @click="reset">
-      Keluar
-    </v-btn>
+    <v-btn
+      :block="$vuetify.breakpoint.xsOnly"
+      color="secondary"
+      class="mr-1 mb-1"
+      @click="reset"
+    >Keluar</v-btn>
   </v-form>
 </template>
 
@@ -77,7 +64,12 @@ export default {
     ],
     select: null,
     combobox: null,
-    recommendation: ["Rekomendasi 1", "Rekomendasi 2", "Rekomendasi 3", "Rekomendasi 4"],
+    recommendation: [
+      "Rekomendasi 1",
+      "Rekomendasi 2",
+      "Rekomendasi 3",
+      "Rekomendasi 4"
+    ],
     items: ["Item 1", "Item 2", "Item 3", "Item 4"],
     checkbox: false
   }),

@@ -1,26 +1,45 @@
-//create a store
+import Vuex from 'vuex';
+import DarkMode from "@/store/darkmode";
+var date = new Date();
+var bolDark = (date.getHours() > 22 || date.getHours() < 6);
 export const state = () => ({
-    posts: {},
-    blogs: {},
-});
+    dark: null,
+})
 
-//getters
 export const getters = {
-    posts(state) {
-        return state.posts
+    dark(state) {
+        return state.dark
     }
 }
 
-//mutations
 export const mutations = {
-    SET_POSTS(state, posts) {
-        state.posts = posts
+    SET_AUTO(state, dark) {
+        state.dark = dark
+    },
+    SET_DARK(state, dark) {
+        state.dark = dark
     }
 }
 
-//actions
 export const actions = {
-    setPosts({commit}, posts) {
-        commit("SET_POSTS", posts)
+    nuxtServerInit({ commit }) {        
+        commit("SET_AUTO", bolDark)
+    },
+    setAUTO({ commit }, dark) {
+        commit("SET_AUTO", dark)
+    },
+    setDark({ commit }, dark) {
+        commit('SET_DARK', dark)
     }
 }
+
+
+// export const createStore = () => {
+//     return new Vuex.Store({
+//         state: {},
+//         mutations: {},
+//         modules: {
+//             DarkMode
+//         }
+//     })
+// }

@@ -1,12 +1,6 @@
 <template>
-  <v-app dark>
-    <v-navigation-drawer
-      v-model="drawer"
-      :mini-variant="miniVariant"
-      :clipped="clipped"
-      fixed
-      app
-    >
+  <v-app :dark="mode">
+    <v-navigation-drawer v-model="drawer" :mini-variant="miniVariant" :clipped="clipped" fixed app>
       <v-list nav subheader>
         <!-- <v-list-item @click.stop="miniVariant = !miniVariant">
           <v-list-item-action>
@@ -17,16 +11,9 @@
           <v-list-item-content>
             <v-list-item-title v-text="'Menu'"/>
           </v-list-item-content>
-        </v-list-item> -->
+        </v-list-item>-->
         <v-subheader v-if="!miniVariant">Menu</v-subheader>
-        <v-list-item
-          v-for="(item, i) in items"
-          :key="i"
-          :to="item.to"
-          nuxt
-          exact
-          color="primary"
-        >
+        <v-list-item v-for="(item, i) in items" :key="i" :to="item.to" nuxt exact color="primary">
           <v-list-item-action>
             <template v-if="item.title == 'Pesan'">
               <v-badge overlap>
@@ -53,9 +40,7 @@
           color="primary"
         >
           <v-list-item-action>
-            <template
-              v-if="item.title == 'Pertanyaanmu' || item.title == 'Kelasmu'"
-            >
+            <template v-if="item.title == 'Pertanyaanmu' || item.title == 'Kelasmu'">
               <v-badge overlap>
                 <template v-slot:badge>!</template>
                 <v-icon>{{ item.icon }}</v-icon>
@@ -90,14 +75,26 @@
       </div>
       <v-spacer />
       <div class="d-none d-sm-none d-md-flex align-center">
+        <v-switch style="margin-top: 1.5rem;" v-model="switch1"></v-switch>
         <ModalTopQuestion />
         <ModalPertanyaan />
-        <v-btn class="mx-1" small color="secondary" to="/login">
-          Login
-        </v-btn>
-        <v-btn class="mx-1" small color="primary" to="/register">
-          Sign Up
-        </v-btn>
+        <!-- <v-btn class="mx-1" small color="secondary" to="/login">Login</v-btn>
+        <v-btn class="mx-1" small color="primary" to="/register">Sign Up</v-btn>-->
+        <v-menu>
+          <template v-slot:activator="{ on }">
+            <v-btn dark icon v-on="on">
+              <v-icon color="primary">mdi-login</v-icon>
+            </v-btn>
+          </template>
+          <v-list>
+            <v-list-item to="/login">
+              <v-list-item-title>Login</v-list-item-title>
+            </v-list-item>
+            <v-list-item to="/register">
+              <v-list-item-title>Sign Up</v-list-item-title>
+            </v-list-item>
+          </v-list>
+        </v-menu>
       </div>
     </v-app-bar>
     <v-content>
@@ -107,7 +104,7 @@
     </v-content>
 
     <v-footer :fixed="fixed" app>
-      <span>&copy; damar 2019</span>
+      <span>&copy; tes tes 2019</span>
     </v-footer>
   </v-app>
 </template>
@@ -123,7 +120,7 @@ export default {
   },
   data() {
     return {
-      checkNight: false,
+      switch1: false,
       clipped: true,
       drawer: true,
       fixed: false,
@@ -176,15 +173,41 @@ export default {
           to: "/messages"
         }
       ],
-      miniVariant: false,
+      miniVariant: true,
       right: true,
       rightDrawer: false,
       title: "BerbaGeek"
     };
   },
-  // created() {
-    // var date = new Date();
-    // this.checkNight = (date.getHours() > 22 || date.getHours() < 6);
-  // }
+  computed: {
+    mode() {
+      return this.$store.state.dark;
+    }
+  },
+  watch: {
+    switch1() {
+      if (this.switch1 == true) {
+        this.$store.dispatch("setDark", true);
+      } else {
+        this.$store.dispatch("setDark", false);
+      }
+    },
+    mode() {
+      if (this.mode) {
+        this.$vuetify.theme.dark = true;
+      } else {
+        this.$vuetify.theme.dark = false;
+      }
+    }
+  },
+  created() {
+    if (this.mode) {
+      this.switch1 = true
+      this.$vuetify.theme.dark = true;
+    } else {
+      this.switch1 = false
+      this.$vuetify.theme.dark = false;
+    }
+  }
 };
 </script>

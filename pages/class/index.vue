@@ -8,78 +8,74 @@
             :show-arrows="showArrows"
             :hide-delimiters="hideDelimiters"
             :cycle="cycle"
-            height="300"
+            height="315"
           >
-            <v-carousel-item>
-              <youtube
-                style="margin: auto; display: block;"
-                :resize="false"
-                height="300"
-                video-id="PjgyH3lVI18"
-              />
-            </v-carousel-item>
-
-            <v-carousel-item>
-              <youtube
-                style="margin: auto; display: block;"
-                :resize="false"
-                height="300"
-                video-id="JhokU8SlmNg"
-              />
-            </v-carousel-item>
-
-            <v-carousel-item>
-              <youtube
-                style="margin: auto; display: block;"
-                :resize="false"
-                height="300"
-                video-id="dFf4AgBNR1E"
-              />
-            </v-carousel-item>
-
-            <v-carousel-item>
-              <youtube
-                style="margin: auto; display: block;"
-                :resize="false"
-                height="300"
-                video-id="JhokU8SlmNg"
-              />
-            </v-carousel-item>
-
-            <v-carousel-item>
-              <youtube
-                style="margin: auto; display: block;"
-                :resize="false"
-                height="300"
-                video-id="PjgyH3lVI18"
-              />
-            </v-carousel-item>
+            <v-carousel-item v-for="item in items" :key="item.id" v-html="item.content"></v-carousel-item>
           </v-carousel>
         </v-row>
       </v-col>
     </v-row>
-    <v-row>
-      <v-col :cols="12"> </v-col>
-    </v-row>
+    <RecommendClass
+    :title="'Video Rekomendasi'"
+    >
+    </RecommendClass>
+
+    <RecommendClass
+    :title="'Course Rekomendasi'"
+    >
+    </RecommendClass>
+
+    <RecommendClass
+    :title="'Team Rekomendasi'"
+    >
+    </RecommendClass>
   </v-container>
 </template>
 
 <script>
+import RecommendClass from "@/components/recommend/RecommendClass";
 export default {
+  components: {
+    RecommendClass
+  },
   data() {
     return {
       model: 0,
       showArrows: true,
       hideDelimiters: true,
-      cycle: false
+      cycle: false,
+      items: [
+        {
+          id: "1",
+          content:
+            '<iframe style="display: block; margin: 0 auto;" width="560" height="315" src="https://www.youtube.com/embed/VRZVQVUO4PU" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>'
+        },
+        {
+          id: "2",
+          content:
+            '<iframe style="display: block; margin: 0 auto;" width="560" height="315" src="https://www.youtube.com/embed/a_IA-8nQ4FY" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>'
+        },
+        {
+          id: "3",
+          content:
+            '<iframe style="display: block; margin: 0 auto;" width="560" height="315" src="https://www.youtube.com/embed/QpuycU77J5o" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>'
+        },
+        {
+          id: "4",
+          content:
+            '<iframe style="display: block; margin: 0 auto;" width="560" height="315" src="https://www.youtube.com/embed/jANE8lpoj2c" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>'
+        },
+        {
+          id: "5",
+          content:
+            '<iframe style="display: block; margin: 0 auto;" width="560" height="315" src="https://www.youtube.com/embed/5530I_pYjbo" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>'
+        },
+      ]
     };
   }
 };
 </script>
 
 <style scoped>
-/* iframe {
-  margin: auto;
-  display: block;
-} */
+
 </style>

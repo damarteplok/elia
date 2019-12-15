@@ -1,7 +1,7 @@
 <template>
-  <v-row class="row-custom-login-modal" :style="dark2 ? {backgroundColor: '#303030'} : ''" no-gutters>
+  <v-row class="row-custom-login-modal" :style="mode ? {backgroundColor: '#303030'} : ''" no-gutters>
     <v-col cols="12" sm="6" class="pl-4 pb-4 pr-4 pt-4">
-      <h2>Masuk BerbaGeek</h2>
+      <h2 style="text-align: center;">Masuk BerbaGeek</h2>
       <div class="mb-8"></div>
       <FormLogin />
     </v-col>
@@ -39,11 +39,8 @@ export default {
     };
   },
   computed: {
-    dark2() {
-      var date = new Date();
-      let thisdark2 = date.getHours() > 22 || date.getHours() < 6;
-      return thisdark2
-      
+    mode() {
+      return this.$store.state.dark 
     }
   },
 };

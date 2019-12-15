@@ -1,5 +1,5 @@
 <template>
-  <v-app>
+  <v-app :dark="mode">
     <v-content>
       <v-container fluid class="fill-height">
         <v-row no-gutters align="center" justify="center">
@@ -16,6 +16,11 @@
 export default {
   data() {
     return {};
-  }
+  },
+  computed: {
+    mode () {
+      return this.$store.state.dark
+    }
+  },
 };
 </script>

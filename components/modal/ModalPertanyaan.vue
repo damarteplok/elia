@@ -2,13 +2,7 @@
   <div>
     <v-dialog v-model="dialog" persistent max-width="800px">
       <template v-slot:activator="{ on }">
-        <v-btn
-          dark
-          v-on="on"
-          class="mx-1"
-          small
-          color="primary"
-        >
+        <v-btn :dark="mode" v-on="on" class="mx-1" small color="primary">
           Tanya Ah!
         </v-btn>
       </template>
@@ -18,28 +12,29 @@
         </v-card-title>
         <v-card-text>
           <v-container>
-              <FormPertanyaan
-              @dialogShow="dialog = false"
-              />
+            <FormPertanyaan @dialogShow="dialog = false" />
           </v-container>
-
         </v-card-text>
-    
       </v-card>
     </v-dialog>
   </div>
 </template>
 
 <script>
-import FormPertanyaan from '@/components/form/FormPertanyaan'
+import FormPertanyaan from "@/components/form/FormPertanyaan";
 export default {
+  computed: {
+    mode () {
+      return this.$store.state.dark
+    }
+  },
   components: {
     FormPertanyaan
   },
   data() {
     return {
       dialog: false
-    }
+    };
   }
-}
+};
 </script>

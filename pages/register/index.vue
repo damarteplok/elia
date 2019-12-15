@@ -1,5 +1,5 @@
 <template>
-  <v-row class="row-custom-login-modal" :style="dark4 ? {backgroundColor: '#303030'} : ''" no-gutters>
+  <v-row class="row-custom-login-modal" :style="mode ? {backgroundColor: '#303030'} : ''" no-gutters>
     
     <v-col cols="12" sm="6" class="custom-register-left">
       <v-row class="fill-height" no-gutters align="center" justify="center">
@@ -18,7 +18,7 @@
     </v-col>
 
     <v-col cols="12" sm="6" class="pl-4 pb-4 pr-4 pt-4">
-      <h2>Daftar BerbaGeek</h2>
+      <h2 style="text-align: center;">Daftar BerbaGeek</h2>
       <div class="mb-8"></div>
       <FormRegister />
     </v-col>
@@ -39,10 +39,8 @@ export default {
     };
   },
   computed: {
-    dark4() {
-      var date = new Date();
-      let thisdark4 = date.getHours() > 22 || date.getHours() < 6;
-      return thisdark4
+    mode() {
+      return this.$store.state.dark 
     }
   },
 };
