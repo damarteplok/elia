@@ -29,14 +29,19 @@
     :title="'Team Rekomendasi'"
     >
     </RecommendClass>
+    <RecommendBook>
+      
+    </RecommendBook>
   </v-container>
 </template>
 
 <script>
 import RecommendClass from "@/components/recommend/RecommendClass";
+import RecommendBook from "@/components/recommend/RecommendBook";
 export default {
   components: {
-    RecommendClass
+    RecommendClass,
+    RecommendBook
   },
   data() {
     return {
