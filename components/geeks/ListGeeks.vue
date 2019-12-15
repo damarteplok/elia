@@ -16,6 +16,7 @@
           ></v-overflow-btn>
         </v-col>
       </v-row>
+      <TopTri></TopTri>
       <v-row>
         <v-col cols="12">
           <v-simple-table>
@@ -37,7 +38,7 @@
                     <v-avatar color="indigo" size="28">
                       <v-icon dark>mdi-account-circle</v-icon>
                     </v-avatar>
-                     {{ item.name }}
+                    {{ item.name }}
                   </td>
                   <td>{{ item.alamat }}</td>
                   <td>{{ item.office }}</td>
@@ -54,29 +55,40 @@
 </template>
 
 <script>
+import TopTri from "@/components/geeks/TopTri";
 export default {
+  components: {
+    TopTri
+  },
   data() {
     return {
       dropdown_icon: [
         { text: "Peringkat", callback: () => console.log("test") },
         { text: "Rating", callback: () => console.log("test") }
       ],
-      tables: [
-        
-      ]
+      tables: []
     };
   },
   created() {
-      for (let i = 0; i < 10; i++) {
-          this.tables.push({
-              name: Math.random().toString(36).substring(2, 15),
-              alamat: Math.random().toString(36).substring(2, 15),
-              office: Math.random().toString(36).substring(2, 15),
-              job: Math.random().toString(36).substring(2, 15),
-              rating: Math.random().toString(36).substring(2, 15),
-          })
-          
-      }
+    for (let i = 0; i < 10; i++) {
+      this.tables.push({
+        name: Math.random()
+          .toString(36)
+          .substring(2, 15),
+        alamat: Math.random()
+          .toString(36)
+          .substring(2, 15),
+        office: Math.random()
+          .toString(36)
+          .substring(2, 15),
+        job: Math.random()
+          .toString(36)
+          .substring(2, 15),
+        rating: Math.random()
+          .toString(36)
+          .substring(2, 15)
+      });
+    }
   }
 };
 </script>
