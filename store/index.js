@@ -5,6 +5,7 @@ var bolDark = (date.getHours() > 17 || date.getHours() < 6);
 export const state = () => ({
     dark: null,
     mini: true,
+    customTabs: [],
 })
 
 export const getters = {
@@ -13,6 +14,9 @@ export const getters = {
     },
     mini(state) {
         return state.mini
+    },
+    customTabs(state) {
+      return state.customTabs
     }
 }
 
@@ -25,11 +29,19 @@ export const mutations = {
     },
     SET_MINI(state, mini) {
         state.mini = mini
+    },
+    SET_CUSTOM_TABS(state, customTabs) {
+      state.customTabs.push(customTabs)
+      // state.customTabs = customTabs
+    },
+    DEL_CUSTOM_TABS(state, customTabs) {
+      state.customTabs.splice(customTabs, 1)
+      // state.customTabs = customTabs
     }
 }
 
 export const actions = {
-    nuxtServerInit({ commit }) {        
+    nuxtServerInit({ commit }) {
         commit("SET_AUTO", bolDark)
     },
     setAUTO({ commit }, dark) {
@@ -40,16 +52,12 @@ export const actions = {
     },
     setMini({ commit }, mini) {
         commit('SET_MINI', mini)
+    },
+    setCustomTabs({ commit }, customTabs) {
+      commit('SET_CUSTOM_TABS', customTabs)
+    },
+    delCustomTabs({ commit }, customTabs) {
+      commit('DEL_CUSTOM_TABS', customTabs)
     }
 }
 
-
-// export const createStore = () => {
-//     return new Vuex.Store({
-//         state: {},
-//         mutations: {},
-//         modules: {
-//             DarkMode
-//         }
-//     })
-// }

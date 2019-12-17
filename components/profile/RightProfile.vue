@@ -72,28 +72,28 @@ export default {
       show: false,
       items2: [
         {
-          color: "#673AB7",
+          color: "#2196F3",
           src:
             "https://cdn.mos.cms.futurecdn.net/8wRq3AgggbXphqRxapGWbZ-320-80.jpg",
           title: "Crazy Wardrobe",
           artist: "2017"
         },
         {
-          color: "#673AB7",
+          color: "#2196F3",
           src:
             "https://cdn.mos.cms.futurecdn.net/8wRq3AgggbXphqRxapGWbZ-320-80.jpg",
           title: "Idol Produce",
           artist: "2018"
         },
         {
-          color: "#673AB7",
+          color: "#2196F3",
           src:
             "https://cdn.mos.cms.futurecdn.net/8wRq3AgggbXphqRxapGWbZ-320-80.jpg",
           title: "Hi! Housemate",
           artist: "2018"
         },
         {
-          color: "#673AB7",
+          color: "#2196F3",
           src:
             "https://cdn.mos.cms.futurecdn.net/8wRq3AgggbXphqRxapGWbZ-320-80.jpg",
           title: "Love Timing",
@@ -102,14 +102,14 @@ export default {
       ],
       items: [
         {
-          color: "#673AB7",
+          color: "#2196F3",
           src:
             "https://cdn.mos.cms.futurecdn.net/8wRq3AgggbXphqRxapGWbZ-320-80.jpg",
           title: "Produce 101",
           artist: "2016"
         },
         {
-          color: "#673AB7",
+          color: "#2196F3",
           src:
             "https://cdn.mos.cms.futurecdn.net/8wRq3AgggbXphqRxapGWbZ-320-80.jpg",
           title: "Oppa Thinking",

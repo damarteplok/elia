@@ -29,8 +29,8 @@ export default {
     list: {
       type : Array,
       default: [
-        { text: "Peringkat", callback: () => console.log("test") },
-        { text: "Rating", callback: () => console.log("test") }
+        { text: "Peringkat" },
+        { text: "Rating" }
       ],
     }
   },

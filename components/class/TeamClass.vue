@@ -4,7 +4,7 @@
     <RecommendClass :title="'Teman 1 Rekomendasi'"></RecommendClass>
     <RecommendClass :title="'Teman 2 Rekomendasi'"></RecommendClass>
     <RecommendClass :title="'Teman 3 Rekomendasi'"></RecommendClass>
-    <RecommendBook></RecommendBook>
+    <RecommendBook :titleHeader="'Your collections team books'" :subtitleHeader="''"></RecommendBook>
   </div>
 </template>
 

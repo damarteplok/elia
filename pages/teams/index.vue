@@ -19,7 +19,7 @@
               <v-tab-item
                 :style="mode ? {'backgroundColor': '#303030'} : {'backgroundColor': '#FAFAFA'}"
               >
-                <TeamBrowse></TeamBrowse>
+                <TeamBrowse :list="dropdown_icon2"></TeamBrowse>
                 <TeamTier tipe="2"></TeamTier>
               </v-tab-item>
               <v-tab-item

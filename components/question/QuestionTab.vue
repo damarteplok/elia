@@ -30,7 +30,7 @@
       <v-tab :href="'#month'">
         <v-chip small color="white" class="mr-1">
           <span style="color: black;">10</span>
-        </v-chip>Team
+        </v-chip>Programming
       </v-tab>
 
       <v-tab-item value="month">
@@ -41,7 +41,7 @@
         </v-card>
       </v-tab-item>
 
-      <v-tab :href="'#week'">Kategori 1</v-tab>
+      <v-tab :href="'#week'">UI/UX</v-tab>
 
       <v-tab-item value="week">
         <v-card flat tile>

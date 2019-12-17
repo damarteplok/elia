@@ -8,6 +8,7 @@
             <v-tabs :background-color="mode ? '#303030' : '#FAFAFA'">
               <v-tab style="text-align: left; padding-left: 0px;">Public</v-tab>
               <v-tab>Team</v-tab>
+              <v-tab>Your Class</v-tab>
               <v-tab-item
                 :style="mode ? {'backgroundColor': '#303030'} : {'backgroundColor': '#FAFAFA'}"
               >
@@ -19,6 +20,12 @@
               >
                 <TeamBrowse :tipe="'Kategori'" :list="dropdown_icon2"></TeamBrowse>
                 <TeamClass></TeamClass>
+              </v-tab-item>
+              <v-tab-item
+                :style="mode ? {'backgroundColor': '#303030'} : {'backgroundColor': '#FAFAFA'}"
+              >
+                <TeamBrowse :tipe="'Kategori'" :list="dropdown_icon2"></TeamBrowse>
+                <YourClass />
               </v-tab-item>
             </v-tabs>
           </v-col>
@@ -32,11 +39,13 @@
 import TeamBrowse from "@/components/teams/TeamBrowse";
 import PublicClass from "@/components/class/PublicClass";
 import TeamClass from "@/components/class/TeamClass";
+import YourClass from "@/components/class/YourClass";
 export default {
   components: {
     TeamBrowse,
     PublicClass,
-    TeamClass
+    TeamClass,
+    YourClass
   },
   data() {
     return {
@@ -46,7 +55,7 @@ export default {
         { text: "3", callback: () => console.log("test") },
         { text: "4", callback: () => console.log("test") },
         { text: "5", callback: () => console.log("test") }
-      ],
+      ]
     };
   },
   computed: {
