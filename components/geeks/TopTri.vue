@@ -60,21 +60,21 @@ export default {
       show: false,
       cards: [
         {
-          title: "100K point",
+          title: "100K point (Immortal 10)",
           src:
             "http://www.manufacturingglobal.com/sites/default/files/styles/slider_detail/public/topic/image/GettyImages-889312658.jpg?itok=1wBuR8q_",
           flex: 4,
           show: true
         },
         {
-          title: "50K point",
+          title: "50K point (Immortal 5)",
           src:
             "http://www.manufacturingglobal.com/sites/default/files/styles/slider_detail/public/topic/image/GettyImages-889312658.jpg?itok=1wBuR8q_",
           flex: 4,
           show: true
         },
         {
-          title: "25K point",
+          title: "25K point (Immortal 3)",
           src:
             "http://www.manufacturingglobal.com/sites/default/files/styles/slider_detail/public/topic/image/GettyImages-889312658.jpg?itok=1wBuR8q_",
           flex: 4,

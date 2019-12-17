@@ -23,11 +23,12 @@
               <thead>
                 <tr>
                   <th class="text-left">No</th>
-                  <th class="text-left">Name</th>
-                  <th class="text-left">Domicile</th>
-                  <th class="text-left">Office</th>
-                  <th class="text-left">Jobs</th>
-                  <th class="text-left">Rating</th>
+                  <th class="text-left">Nama</th>
+                  <th class="text-left">Lokasi</th>
+                  <th class="text-left">Team</th>
+                  <th class="text-left">Pekerjaan</th>
+                  <th class="text-left">Skills</th>
+                  <th class="text-left">Tingkatan</th>
                 </tr>
               </thead>
               <tbody>
@@ -45,6 +46,7 @@
                   <td>{{ item.alamat }}</td>
                   <td>{{ item.office }}</td>
                   <td>{{ item.job }}</td>
+                  <td>Skills</td>
                   <td>{{ item.rating }}</td>
                 </tr>
               </tbody>

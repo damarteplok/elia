@@ -2,7 +2,7 @@
   <v-container fluid>
     <v-row>
       <v-col :xs="12" :sm="12" :md="9" :lg="9" :cols="12">
-        <h2>The Geeks</h2>
+        <h2>Browse Geek</h2>
         <ListGeeks></ListGeeks>
       </v-col>
       <v-col :xs="12" :sm="12" :md="3" :lg="3" :cols="12">

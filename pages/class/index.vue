@@ -7,17 +7,17 @@
           <v-col :cols="12">
             <v-tabs :background-color="mode ? '#303030' : '#FAFAFA'">
               <v-tab style="text-align: left; padding-left: 0px;">Public</v-tab>
-              <v-tab>Teams</v-tab>
+              <v-tab>Team</v-tab>
               <v-tab-item
                 :style="mode ? {'backgroundColor': '#303030'} : {'backgroundColor': '#FAFAFA'}"
               >
-                <TeamBrowse></TeamBrowse>
+                <TeamBrowse :tipe="'Kategori'"></TeamBrowse>
                 <PublicClass></PublicClass>
               </v-tab-item>
               <v-tab-item
                 :style="mode ? {'backgroundColor': '#303030'} : {'backgroundColor': '#FAFAFA'}"
               >
-                <TeamBrowse></TeamBrowse>
+                <TeamBrowse :tipe="'Kategori'"></TeamBrowse>
                 <TeamClass></TeamClass>
               </v-tab-item>
             </v-tabs>
