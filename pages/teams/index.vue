@@ -6,14 +6,15 @@
         <v-row>
           <v-col :cols="12">
             <v-tabs :background-color="mode ? '#303030' : '#FAFAFA'">
-              <v-tab style="padding-left: 0px">Top Tiers</v-tab>
+              <v-tab style="padding-left: 0px">Top</v-tab>
               <v-tab>Near</v-tab>
               <v-tab>Make Your Team!</v-tab>
               <v-tab-item
                 :style="mode ? {'backgroundColor': '#303030'} : {'backgroundColor': '#FAFAFA'}"
               >
-                <TeamBrowse></TeamBrowse>
-                <TeamTier></TeamTier>
+                <TeamBrowse :list="dropdown_icon2"></TeamBrowse>
+                <TeamTier :title="'Top Point'"></TeamTier>
+                <TeamTier :title="'Popular'"></TeamTier>
               </v-tab-item>
               <v-tab-item
                 :style="mode ? {'backgroundColor': '#303030'} : {'backgroundColor': '#FAFAFA'}"
@@ -88,7 +89,11 @@ export default {
       ],
       select: null,
       items: ["Item 1", "Item 2", "Item 3", "Item 4"],
-      checkbox: false
+      checkbox: false,
+      dropdown_icon2: [
+        { text: "Poin", callback: () => console.log("test") },
+        { text: "Jumlah User", callback: () => console.log("test") },
+      ],
     };
   },
   computed: {

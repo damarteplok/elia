@@ -8,9 +8,9 @@
         <v-col cols="3">
           <v-overflow-btn
             style="margin-top: 0px;"
-            :items="(tipe == 'peringkat') ? dropdown_icon : dropdown_icon2"
+            :items="list"
             menu-props="bottom"
-            :label="(tipe == 'peringkat') ? 'Urutkan' : tipe"
+            :label="tipe"
             target="#geeks"
           ></v-overflow-btn>
         </v-col>
@@ -24,22 +24,18 @@ export default {
   props: {
     tipe: {
       type: String,
-      default: 'peringkat',
+      default: 'Urutkan',
+    },
+    list: {
+      type : Array,
+      default: [
+        { text: "Peringkat", callback: () => console.log("test") },
+        { text: "Rating", callback: () => console.log("test") }
+      ],
     }
   },
   data() {
     return {
-      dropdown_icon: [
-        { text: "Peringkat", callback: () => console.log("test") },
-        { text: "Rating", callback: () => console.log("test") }
-      ],
-      dropdown_icon2: [
-        { text: "1", callback: () => console.log("test") },
-        { text: "2", callback: () => console.log("test") },
-        { text: "3", callback: () => console.log("test") },
-        { text: "4", callback: () => console.log("test") },
-        { text: "5", callback: () => console.log("test") }
-      ],
       tables: []
     };
   },

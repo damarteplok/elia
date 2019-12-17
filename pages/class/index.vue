@@ -11,13 +11,13 @@
               <v-tab-item
                 :style="mode ? {'backgroundColor': '#303030'} : {'backgroundColor': '#FAFAFA'}"
               >
-                <TeamBrowse :tipe="'Kategori'"></TeamBrowse>
+                <TeamBrowse :tipe="'Kategori'" :list="dropdown_icon2"></TeamBrowse>
                 <PublicClass></PublicClass>
               </v-tab-item>
               <v-tab-item
                 :style="mode ? {'backgroundColor': '#303030'} : {'backgroundColor': '#FAFAFA'}"
               >
-                <TeamBrowse :tipe="'Kategori'"></TeamBrowse>
+                <TeamBrowse :tipe="'Kategori'" :list="dropdown_icon2"></TeamBrowse>
                 <TeamClass></TeamClass>
               </v-tab-item>
             </v-tabs>
@@ -39,7 +39,15 @@ export default {
     TeamClass
   },
   data() {
-    return {};
+    return {
+      dropdown_icon2: [
+        { text: "1", callback: () => console.log("test") },
+        { text: "2", callback: () => console.log("test") },
+        { text: "3", callback: () => console.log("test") },
+        { text: "4", callback: () => console.log("test") },
+        { text: "5", callback: () => console.log("test") }
+      ],
+    };
   },
   computed: {
     mode() {

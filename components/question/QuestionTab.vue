@@ -3,7 +3,7 @@
     <v-tabs background-color="primary" :dark="mode">
       <v-tabs-slider></v-tabs-slider>
 
-      <v-tab :href="'#popular'">Popular</v-tab>
+      <v-tab :href="'#popular'">Terbaru</v-tab>
 
       <v-tab-item value="popular">
         <v-card flat tile>
@@ -16,7 +16,7 @@
       <v-tab :href="'#new'">
         <v-chip small color="white" class="mr-1">
           <span style="color: black;">2</span>
-        </v-chip>Terbaru
+        </v-chip>Popular
       </v-tab>
 
       <v-tab-item value="new">
@@ -30,7 +30,7 @@
       <v-tab :href="'#month'">
         <v-chip small color="white" class="mr-1">
           <span style="color: black;">10</span>
-        </v-chip>Bulan ini
+        </v-chip>Team
       </v-tab>
 
       <v-tab-item value="month">
@@ -41,7 +41,7 @@
         </v-card>
       </v-tab-item>
 
-      <v-tab :href="'#week'">Minggu ini</v-tab>
+      <v-tab :href="'#week'">Kategori 1</v-tab>
 
       <v-tab-item value="week">
         <v-card flat tile>

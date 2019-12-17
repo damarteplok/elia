@@ -1,7 +1,7 @@
 <template>
   <div>
     <v-tabs>
-      <v-tab style="padding-left: 0px">All</v-tab>
+      <v-tab style="padding-left: 0px">Public</v-tab>
       <v-tab>Team</v-tab>
       <v-tab-item>
           <LeftTabMessage></LeftTabMessage>

@@ -29,7 +29,11 @@
                   </v-list-item-avatar>
 
                   <v-list-item-content>
-                    <v-list-item-title>{{ Math.floor(Math.random() * 1000) }} joined</v-list-item-title>
+                    <v-list-item-title>
+                      <span>{{ Math.floor(Math.random() * 1000) }} joined 
+                      <br> {{ Math.floor(Math.random() * 1000) }} point
+                      </span>
+                    </v-list-item-title>
                   </v-list-item-content>
                   <v-row align="center" justify="end">
                     <v-icon class="mr-1">mdi-share-variant</v-icon>
