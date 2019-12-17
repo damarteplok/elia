@@ -139,7 +139,6 @@ export default {
     window.addEventListener('scroll', () => {
       this.bottom = this.bottomVisible()
     })
-    //this.addPertanyaan()
   },
   computed: {
     mode() {
@@ -158,7 +157,7 @@ export default {
       this.$router.push(`/profiles/me`);
     },
     addPertanyaan() {
-      for (let i = 0; i < 3; i++) {
+      for (let i = 0; i < 5; i++) {
         this.items.push({
           id: Date.now(),
           action: "time in here",
