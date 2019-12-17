@@ -61,7 +61,7 @@
       <v-btn icon @click.stop="miniVariant = !miniVariant">
         <v-icon>mdi-{{ `chevron-${miniVariant ? "right" : "left"}` }}</v-icon>
       </v-btn>
-      <v-img src="/berbageek-logo.png"  max-width="180" class="mr-3"></v-img>
+      <v-img src="/new-berbageek-logo.png"  max-width="180" class="mr-3"></v-img>
       <v-spacer />
       <div class="d-none d-sm-none d-md-flex align-center" style="width: 50%">
         <v-text-field
@@ -137,7 +137,7 @@ export default {
         {
           icon: "mdi-account-circle",
           title: "Profile",
-          to: "/profiles/me"
+          to: "/profiles"
         },
         {
           icon: "mdi-message",

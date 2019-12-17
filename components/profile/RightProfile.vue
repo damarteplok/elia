@@ -1,13 +1,20 @@
 <template>
   <div>
     <v-row dense>
-      <v-col v-for="(item, i) in items" :key="i" :cols="12" :style="i == 0 ? {'paddingTop': '0px'} : {}">
+      <v-col
+        v-for="(item, i) in items"
+        :key="i"
+        :cols="12"
+        :style="i == 0 ? {'paddingTop': '0px'} : {}"
+      >
         <v-card :color="item.color" dark>
           <div class="d-flex flex-no-wrap justify-space-between">
             <div>
               <v-card-title class="headline" v-text="item.title"></v-card-title>
-
               <v-card-subtitle v-text="item.artist"></v-card-subtitle>
+              <v-card-text>
+                <p>Tes satu dua tiga</p>
+              </v-card-text>
             </div>
 
             <v-avatar class="ma-3" size="125" tile>
@@ -23,8 +30,10 @@
           <div class="d-flex flex-no-wrap justify-space-between">
             <div>
               <v-card-title class="headline" v-text="item.title"></v-card-title>
-
               <v-card-subtitle v-text="item.artist"></v-card-subtitle>
+              <v-card-text>
+                <p>Tes satu dua tiga</p>
+              </v-card-text>
             </div>
 
             <v-avatar class="ma-3" size="125" tile>
@@ -63,28 +72,28 @@ export default {
       show: false,
       items2: [
         {
-          color: this.getRandomColor(),
+          color: "#673AB7",
           src:
             "https://cdn.mos.cms.futurecdn.net/8wRq3AgggbXphqRxapGWbZ-320-80.jpg",
           title: "Crazy Wardrobe",
           artist: "2017"
         },
         {
-          color: this.getRandomColor(),
+          color: "#673AB7",
           src:
             "https://cdn.mos.cms.futurecdn.net/8wRq3AgggbXphqRxapGWbZ-320-80.jpg",
           title: "Idol Produce",
           artist: "2018"
         },
         {
-          color: this.getRandomColor(),
+          color: "#673AB7",
           src:
             "https://cdn.mos.cms.futurecdn.net/8wRq3AgggbXphqRxapGWbZ-320-80.jpg",
           title: "Hi! Housemate",
           artist: "2018"
         },
         {
-          color: this.getRandomColor(),
+          color: "#673AB7",
           src:
             "https://cdn.mos.cms.futurecdn.net/8wRq3AgggbXphqRxapGWbZ-320-80.jpg",
           title: "Love Timing",
@@ -93,14 +102,14 @@ export default {
       ],
       items: [
         {
-          color: this.getRandomColor(),
+          color: "#673AB7",
           src:
             "https://cdn.mos.cms.futurecdn.net/8wRq3AgggbXphqRxapGWbZ-320-80.jpg",
           title: "Produce 101",
           artist: "2016"
         },
         {
-          color: this.getRandomColor(),
+          color: "#673AB7",
           src:
             "https://cdn.mos.cms.futurecdn.net/8wRq3AgggbXphqRxapGWbZ-320-80.jpg",
           title: "Oppa Thinking",
@@ -109,15 +118,6 @@ export default {
       ]
     };
   },
-  methods: {
-    getRandomColor() {
-      let letters = "0123456789ABCDEF";
-      let color = "#";
-      for (let i = 0; i < 6; i++) {
-        color += letters[Math.floor(Math.random() * 16)];
-      }
-      return color;
-    }
-  }
+  methods: {}
 };
 </script>

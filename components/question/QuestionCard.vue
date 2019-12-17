@@ -158,7 +158,7 @@ export default {
       return bottomOfPage || pageHeight < visible
     },
     loadUser() {
-      this.$router.push(`/profiles/me`);
+      this.$router.push(`/profiles`);
     },
     addPertanyaan() {
       for (let i = 0; i < 5; i++) {
