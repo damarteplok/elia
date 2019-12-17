@@ -4,7 +4,7 @@
       <v-img height="100%" src="https://cdn.vuetifyjs.com/images/cards/server-room.jpg">
         <v-row align="end" class="fill-height">
           <v-col align-self="start" class="pa-0" cols="12">
-            <v-avatar class="profile" color="grey" size="164" tile>
+            <v-avatar class="profile" color="grey" :size="$vuetify.breakpoint.xl ? 224 : 164" tile>
               <v-img
                 src="https://seoulbeats.com/wp-content/uploads/2016/04/20160414_seoulbeats_produce101_pledis_pinky.jpg"
               ></v-img>
@@ -55,6 +55,9 @@ import LeftChart from "@/components/profile/LeftChart";
 export default {
   components: {
     LeftChart
+  },
+  mounted() {
+ 
   }
 };
 </script>

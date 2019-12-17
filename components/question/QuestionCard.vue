@@ -5,9 +5,13 @@
         <template v-for="(item, index) in items">
           <v-list-item :key="'list' + item.id + index">
             <template v-slot:default="{ active, toggle }">
-              <v-list-item-avatar>
-                <v-img src="/default_avatar.png" @click="loadUser"></v-img>
-              </v-list-item-avatar>
+              <v-list-item-avatar color="grey darken-3">
+                  <v-img
+                    class="elevation-6"
+                    src="https://img.icons8.com/plasticine/2x/user.png"
+                    @click="loadUser"
+                  ></v-img>
+                </v-list-item-avatar>
               <v-list-item-content>
                 <v-list-item-title>
                   <nuxt-link class="tdn font-weight-bold" to="/questions/all/1">{{ item.title }}</nuxt-link>
