@@ -14,6 +14,15 @@
 
 <script>
 export default {
+  head () {
+    return {
+      title: 'berbageek',
+      meta: [
+        // hid is used as unique identifier. Do not use `vmid` for it as it will not work
+        { hid: 'berbageek-layout', name: 'berbageek-layout', content: 'Berbageek-layout' }
+      ]
+    }
+  },
   data() {
     return {};
   },

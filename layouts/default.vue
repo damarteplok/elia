@@ -61,7 +61,7 @@
       <v-btn icon @click.stop="miniVariant = !miniVariant">
         <v-icon>mdi-{{ `chevron-${miniVariant ? "right" : "left"}` }}</v-icon>
       </v-btn>
-      <v-toolbar-title v-text="title" />
+      <v-img src="/berbageek-logo.png"  max-width="180" class="mr-3"></v-img>
       <v-spacer />
       <div class="d-none d-sm-none d-md-flex align-center" style="width: 50%">
         <v-text-field
@@ -114,6 +114,15 @@ import ModalPertanyaan from "@/components/modal/ModalPertanyaan.vue";
 import ModalTopQuestion from "@/components/modal/ModalTopQuestion.vue";
 
 export default {
+  head () {
+    return {
+      title: 'berbageek',
+      meta: [
+        // hid is used as unique identifier. Do not use `vmid` for it as it will not work
+        { hid: 'berbageek-layout', name: 'berbageek-layout', content: 'Berbageek-layout' }
+      ]
+    }
+  },
   components: {
     ModalPertanyaan,
     ModalTopQuestion

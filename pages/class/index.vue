@@ -4,6 +4,7 @@
       <v-col :cols="12">
         <v-row justify="center" align="center">
           <v-carousel
+            dark
             v-model="model"
             :show-arrows="showArrows"
             :hide-delimiters="hideDelimiters"
